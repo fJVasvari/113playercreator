@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Register_Login</string>
+    <string name="register_text">Register</string>
+    <string name="back_to_login">Back to login page</string>
+    <string name="fullname_hint">Full name</string>
+    <string name="email_hint">e-mail</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_text">Login</string>
+    <string name="go_to_register">Go to register</string>
+    <string name="create_player">Create player</string>
+    <string name="playername_hint">Player name</string>
+    <string name="class_hint">Player class</string>
+    <string name="gender_hint">Player gender</string>
+</resources>
