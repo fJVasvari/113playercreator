@@ -10,13 +10,13 @@ public class Player {
     private int pDamage;
     private int pDefense;
 
-    public Player(String pName, String pClass, String pGender, int pHealth, int pDamage, int pDefense) {
+    public Player(String pName, String pClass, String pGender) {
         this.pName = pName;
         this.pClass = pClass;
         this.pGender = pGender;
-        this.pHealth = pHealth;
-        this.pDamage = pDamage;
-        this.pDefense = pDefense;
+        this.pHealth = 1;
+        this.pDamage = 1;
+        this.pDefense = 1;
     }
 
     public String getpName() {

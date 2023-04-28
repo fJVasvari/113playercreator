@@ -37,8 +37,9 @@ public class RegisterUser {
                     if(putData.startPut()){
                         if(putData.onComplete()){
                             String result = putData.getResult();
+                            Toast.makeText(context,result,Toast.LENGTH_SHORT).show();
                             if(result.equals("Sign Up Success")){
-                                Toast.makeText(context,result,Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(context,result,Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(context, MainActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                 context.startActivity(intent);

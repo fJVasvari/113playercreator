@@ -20,9 +20,9 @@
 
     <EditText
         android:id="@+id/playerNameEditText"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:autofillHints=""
+        android:layout_width="300dp"
         android:ems="10"
         android:hint="@string/playername_hint"
         android:inputType="textPersonName"
@@ -34,38 +34,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.115" />
-    <EditText
-        android:id="@+id/playerClass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/class_hint"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerNameEditText"
-        app:layout_constraintVertical_bias="0.115" />
-    <EditText
-        android:id="@+id/playerGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/gender_hint"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textColorHint="#757575"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerClass"
-        app:layout_constraintVertical_bias="0.115" />
 
     <Button
         android:id="@+id/createPlayerBtn"
@@ -76,8 +44,152 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playerGender"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
+    <Spinner
+        android:id="@+id/playerClassSpinner"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerNameEditText"
+        app:layout_constraintVertical_bias="0.100"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Spinner
+        android:id="@+id/playerGenderSpinner"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerClassSpinner"
+        app:layout_constraintVertical_bias="0.100"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/playerHealthText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stat_null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerGenderSpinner"
+        app:layout_constraintVertical_bias="0.100" />
+
+    <TextView
+        android:id="@+id/playerDamageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stat_null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerHealthText"
+        app:layout_constraintVertical_bias="0.142" />
+
+    <TextView
+        android:id="@+id/playerDefenseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stat_null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerDamageText"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <Button
+        android:id="@+id/playerHealthPlusBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="@string/btn_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playerHealthText"
+        app:layout_constraintTop_toBottomOf="@+id/playerGenderSpinner"
+        app:layout_constraintVertical_bias="0.060"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+    <Button
+        android:id="@+id/playerDamagePlusBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="@string/btn_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playerDamageText"
+        app:layout_constraintTop_toBottomOf="@+id/playerHealthPlusBtn"
+        app:layout_constraintVertical_bias="0.060" />
+    <Button
+        android:id="@+id/playerDefensePlusBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="@string/btn_plus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playerDefenseText"
+        app:layout_constraintTop_toBottomOf="@+id/playerDamagePlusBtn"
+        app:layout_constraintVertical_bias="0.060" />
+
+    <Button
+        android:id="@+id/playerHealthMinusBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="@string/btn_minus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/playerHealthText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerGenderSpinner"
+        app:layout_constraintVertical_bias="0.060"
+        tools:ignore="DuplicateSpeakableTextCheck" />
+    <Button
+        android:id="@+id/playerDamageMinusBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="@string/btn_minus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/playerDamageText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerHealthMinusBtn"
+        app:layout_constraintVertical_bias="0.060" />
+    <Button
+        android:id="@+id/playerDefenseMinusBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="@string/btn_minus"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/playerDefenseText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerDamageMinusBtn"
+        app:layout_constraintVertical_bias="0.060" />
+
+    <TextView
+        android:id="@+id/playerRemainingStatText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stpleft"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/playerRemainingStatPointText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerDefenseText"
+        app:layout_constraintVertical_bias="0.166" />
+    <TextView
+        android:id="@+id/playerRemainingStatPointText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stat_null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerDefenseText"
+        app:layout_constraintVertical_bias="0.166" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

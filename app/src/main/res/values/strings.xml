@@ -12,4 +12,8 @@
     <string name="playername_hint">Player name</string>
     <string name="class_hint">Player class</string>
     <string name="gender_hint">Player gender</string>
+    <string name="stat_null">0</string>
+    <string name="btn_plus">+</string>
+    <string name="btn_minus">-</string>
+    <string name="stpleft">Stat point left:</string>
 </resources>
