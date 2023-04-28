@@ -3,7 +3,9 @@ package com.example.register_login;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -18,7 +20,12 @@ public class CreatePlayer extends AppCompatActivity {
 
     TextView playerHealthText, playerDamageText, playerDefenseText, playerRemainingStatPointText;
 
-    int RemainingStatPoint = 10;
+    Button createPlayerBtn, playerHealthPlusBtn, playerDamagePlusBtn, playerDefensePlusBtn, playerHealthMinusBtn, playerDamageMinusBtn, playerDefenseMinusBtn;
+
+    int remainingStatPoint = 10;
+    int playerHealthPoint = 1;
+    int playerDamagePoint = 1;
+    int playerDefensePoint = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +55,42 @@ public class CreatePlayer extends AppCompatActivity {
         playerDefenseText = findViewById(R.id.playerDefenseText);
         playerRemainingStatPointText = findViewById(R.id.playerRemainingStatPointText);
 
-        playerHealthText.setText("");
-        playerDamageText.setText("");
-        playerDefenseText.setText("");
-        playerRemainingStatPointText.setText(""+RemainingStatPoint);
+        playerHealthText.setText(""+playerHealthPoint);
+        playerDamageText.setText(""+playerDamagePoint);
+        playerDefenseText.setText(""+playerDefensePoint);
+        playerRemainingStatPointText.setText(""+remainingStatPoint);
+
+//Stat point manager
+
+        createPlayerBtn = findViewById(R.id.createPlayerBtn);
+        playerHealthPlusBtn = findViewById(R.id.playerHealthPlusBtn);
+        playerDamagePlusBtn = findViewById(R.id.playerDamagePlusBtn);
+        playerDefensePlusBtn = findViewById(R.id.playerDefensePlusBtn);
+        playerHealthMinusBtn = findViewById(R.id.playerHealthMinusBtn);
+        playerDamageMinusBtn = findViewById(R.id.playerDamageMinusBtn);
+        playerDefenseMinusBtn = findViewById(R.id.playerDefenseMinusBtn);
+
+        playerHealthPlusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(remainingStatPoint>=1) {
+                    remainingStatPoint -= 1;
+                    playerHealthPoint += 1;
+                    playerHealthText.setText("" + playerHealthPoint);
+                    playerRemainingStatPointText.setText("" + remainingStatPoint);
+                }
+            }
+        });
+        playerHealthMinusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(playerHealthPoint>1){
+                    playerHealthPoint -= 1;
+                    remainingStatPoint += 1;
+                    playerHealthText.setText("" + playerHealthPoint);
+                    playerRemainingStatPointText.setText("" + remainingStatPoint);
+                }
+            }
+        });
     }
 }
