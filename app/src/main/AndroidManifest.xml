@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Register_Login">
         <activity
-            android:name=".CreatePlayer"
+            android:name=".user.register.Register"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -30,7 +30,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".user.register.Register"
+            android:name=".CreatePlayer"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

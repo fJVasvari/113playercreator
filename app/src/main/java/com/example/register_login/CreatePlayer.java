@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.register_login.user.StatPointManager;
 
 import java.util.ArrayList;
 
@@ -70,26 +73,43 @@ public class CreatePlayer extends AppCompatActivity {
         playerDamageMinusBtn = findViewById(R.id.playerDamageMinusBtn);
         playerDefenseMinusBtn = findViewById(R.id.playerDefenseMinusBtn);
 
+
+        StatPointManager spm = new StatPointManager(remainingStatPoint, playerRemainingStatPointText);
+
         playerHealthPlusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(remainingStatPoint>=1) {
-                    remainingStatPoint -= 1;
-                    playerHealthPoint += 1;
-                    playerHealthText.setText("" + playerHealthPoint);
-                    playerRemainingStatPointText.setText("" + remainingStatPoint);
-                }
+                playerHealthPoint=spm.statPlus(playerHealthPoint,playerHealthText);
             }
         });
         playerHealthMinusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(playerHealthPoint>1){
-                    playerHealthPoint -= 1;
-                    remainingStatPoint += 1;
-                    playerHealthText.setText("" + playerHealthPoint);
-                    playerRemainingStatPointText.setText("" + remainingStatPoint);
-                }
+                playerHealthPoint=spm.statMinus(playerHealthPoint,playerHealthText);
+            }
+        });
+        playerDamagePlusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playerDamagePoint=spm.statPlus(playerDamagePoint,playerDamageText);
+            }
+        });
+        playerDamageMinusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playerDamagePoint=spm.statMinus(playerDamagePoint,playerDamageText);
+            }
+        });
+        playerDefensePlusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playerDefensePoint=spm.statPlus(playerDefensePoint,playerDefenseText);
+            }
+        });
+        playerDefenseMinusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playerDefensePoint=spm.statMinus(playerDefensePoint,playerDefenseText);
             }
         });
     }
