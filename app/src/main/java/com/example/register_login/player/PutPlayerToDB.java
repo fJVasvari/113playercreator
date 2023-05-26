@@ -1,4 +1,4 @@
-package com.example.register_login;
+package com.example.register_login.player;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,6 +7,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.register_login.MainActivity;
 import com.example.register_login.player.Player;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 

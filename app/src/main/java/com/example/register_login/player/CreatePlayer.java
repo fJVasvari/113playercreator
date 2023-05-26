@@ -1,7 +1,8 @@
-package com.example.register_login;
+package com.example.register_login.player;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -11,9 +12,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.register_login.player.Player;
+import com.example.register_login.MainMenu;
+import com.example.register_login.R;
 import com.example.register_login.user.StatPointManager;
-import com.example.register_login.user.User;
 
 import java.util.ArrayList;
 
@@ -24,7 +25,7 @@ public class CreatePlayer extends AppCompatActivity {
     ArrayList<String> playerClassList = new ArrayList<>();
     ArrayList<String> playerGenderList = new ArrayList<>();
 
-    TextView playerHealthText, playerDamageText, playerDefenseText, playerRemainingStatPointText;
+    TextView playerHealthText, playerDamageText, playerDefenseText, playerRemainingStatPointText, gotoMainMenu;
 
     Button createPlayerBtn, playerHealthPlusBtn, playerDamagePlusBtn, playerDefensePlusBtn, playerHealthMinusBtn, playerDamageMinusBtn, playerDefenseMinusBtn;
 
@@ -64,6 +65,7 @@ public class CreatePlayer extends AppCompatActivity {
         playerHealthText = findViewById(R.id.playerHealthText);
         playerDamageText = findViewById(R.id.playerDamageText);
         playerDefenseText = findViewById(R.id.playerDefenseText);
+        gotoMainMenu = findViewById(R.id.gotoMainMenu);
         playerRemainingStatPointText = findViewById(R.id.playerRemainingStatPointText);
 
         playerHealthText.setText(""+playerHealthPoint);
@@ -134,6 +136,14 @@ public class CreatePlayer extends AppCompatActivity {
                 player.setpDefense(playerDefensePoint);
                 Toast.makeText(getApplicationContext(),player.toString(),Toast.LENGTH_SHORT).show();
                 putPlayerToDB.putDataToDB(player,getApplicationContext());
+            }
+        });
+        gotoMainMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainMenu.class);
+                startActivity(intent);
+                finish();
             }
         });
 

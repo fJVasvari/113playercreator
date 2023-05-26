@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreatePlayer">
+    tools:context=".player.CreatePlayer">
 
     <TextView
         android:id="@+id/textView"
@@ -42,8 +42,10 @@
         android:text="@string/create_player"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerRemainingStatPointText"
+        app:layout_constraintVertical_bias="0.357"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Spinner
@@ -191,5 +193,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playerDefenseText"
         app:layout_constraintVertical_bias="0.166" />
+    <TextView
+        android:id="@+id/gotoMainMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/go_to_main_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createPlayerBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

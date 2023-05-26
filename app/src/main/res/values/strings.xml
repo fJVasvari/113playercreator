@@ -16,4 +16,7 @@
     <string name="btn_plus">+</string>
     <string name="btn_minus">-</string>
     <string name="stpleft">Stat point left:</string>
+    <string name="main_menu">Main menu</string>
+    <string name="show_players">Show players</string>
+    <string name="go_to_main_menu">Go to main menu</string>
 </resources>

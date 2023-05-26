@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.register_login.CreatePlayer;
-import com.example.register_login.MainActivity;
+import com.example.register_login.MainMenu;
+import com.example.register_login.player.CreatePlayer;
 import com.example.register_login.R;
 import com.example.register_login.user.register.Register;
 
@@ -30,7 +30,7 @@ public class Login extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), CreatePlayer.class);
+                Intent intent = new Intent(getApplicationContext(), MainMenu.class);
                 startActivity(intent);
                 finish();
             }

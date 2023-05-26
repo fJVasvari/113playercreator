@@ -6,14 +6,21 @@
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Register_Login">
+        android:theme="@style/Theme.Register_Login"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".CreatePlayer"
+            android:name=".MainMenu"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".player.CreatePlayer"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
