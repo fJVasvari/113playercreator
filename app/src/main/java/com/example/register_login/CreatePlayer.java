@@ -10,7 +10,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.register_login.player.Player;
 import com.example.register_login.user.StatPointManager;
+import com.example.register_login.user.User;
 
 import java.util.ArrayList;
 
@@ -30,10 +32,13 @@ public class CreatePlayer extends AppCompatActivity {
     int playerDamagePoint = 1;
     int playerDefensePoint = 1;
 
+    PutPlayerToDB putPlayerToDB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_player);
+        putPlayerToDB = new PutPlayerToDB();
 //Set adapter
         playerClassSpinner = findViewById(R.id.playerClassSpinner);
         playerGenderSpinner = findViewById(R.id.playerGenderSpinner);
@@ -112,5 +117,16 @@ public class CreatePlayer extends AppCompatActivity {
                 playerDefensePoint=spm.statMinus(playerDefensePoint,playerDefenseText);
             }
         });
+
+        createPlayerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Player player = new Player("testName","testClass","testGender",1,1,1);
+                Toast.makeText(getApplicationContext(),player.getpName(),Toast.LENGTH_SHORT).show();
+                putPlayerToDB.putDataToDB(player,getApplicationContext());
+            }
+        });
+
     }
 }
