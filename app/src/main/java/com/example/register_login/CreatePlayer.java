@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,8 @@ public class CreatePlayer extends AppCompatActivity {
     TextView playerHealthText, playerDamageText, playerDefenseText, playerRemainingStatPointText;
 
     Button createPlayerBtn, playerHealthPlusBtn, playerDamagePlusBtn, playerDefensePlusBtn, playerHealthMinusBtn, playerDamageMinusBtn, playerDefenseMinusBtn;
+
+    EditText playerNameEditText;
 
     int remainingStatPoint = 10;
     int playerHealthPoint = 1;
@@ -78,6 +81,9 @@ public class CreatePlayer extends AppCompatActivity {
         playerDamageMinusBtn = findViewById(R.id.playerDamageMinusBtn);
         playerDefenseMinusBtn = findViewById(R.id.playerDefenseMinusBtn);
 
+//GetData
+
+        playerNameEditText = findViewById(R.id.playerNameEditText);
 
         StatPointManager spm = new StatPointManager(remainingStatPoint, playerRemainingStatPointText);
 
@@ -122,8 +128,11 @@ public class CreatePlayer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Player player = new Player("testName","testClass","testGender",1,1,1);
-                Toast.makeText(getApplicationContext(),player.getpName(),Toast.LENGTH_SHORT).show();
+                Player player = new Player(playerNameEditText.getText().toString().trim(),playerClassSpinner.getSelectedItem().toString(),playerGenderSpinner.getSelectedItem().toString());
+                player.setpHealth(playerHealthPoint);
+                player.setpDamage(playerDamagePoint);
+                player.setpDefense(playerDefensePoint);
+                Toast.makeText(getApplicationContext(),player.toString(),Toast.LENGTH_SHORT).show();
                 putPlayerToDB.putDataToDB(player,getApplicationContext());
             }
         });
