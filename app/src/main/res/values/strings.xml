@@ -19,4 +19,12 @@
     <string name="main_menu">Main menu</string>
     <string name="show_players">Show players</string>
     <string name="go_to_main_menu">Go to main menu</string>
+    <string name="class_text">Class:</string>
+    <string name="gender_text">Gender:</string>
+    <string name="health_text">Health:</string>
+    <string name="damage_text">Damage:</string>
+    <string name="defense_text">Defense:</string>
+    <string name="placeholder_text">placeholder</string>
+    <string name="Update_btn">Update</string>
+    <string name="Delete_btn">Delete</string>
 </resources>

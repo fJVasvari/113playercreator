@@ -30,6 +30,15 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
+        showPlayers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ShowAllPlayer.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 
 
     }
